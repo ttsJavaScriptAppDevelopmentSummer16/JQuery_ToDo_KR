@@ -1,9 +1,9 @@
-( function(d){
+$( document ).ready(function() {
 
   function appendItem(i){
-    var newLI = d.createElement('li');
+    var newLI = document.createElement('li');
     newLI.innerHTML = i;
-    var list = d.querySelector('ul');
+    var list = document.querySelector('ul');
     list.appendChild(newLI);
     return newLI
   }
@@ -13,22 +13,15 @@
     setTimeout(function(){ i.remove(); }, 1000);
   }
 
-  d.querySelector('#myButton').addEventListener("click", function(e){
-    var newI = d.querySelector("#myField").value;
+  document.querySelector('#myButton').addEventListener("click", function(e){
+    var newI = document.querySelector("#myField").value;
     appendItem(newI);
   });
 
-  d.querySelector('ul').addEventListener('click', function(e){
+  document.querySelector('ul').addEventListener('click', function(e){
     if(e.target.tagName === "LI"){
       removeItem(e.target);
     }
   });
 
-  // d.getElementById("myField").addEventListener("keyup", function(e) {
-  //   e.preventDefault();
-  //   if (e.keyCode == 13) {
-  //       d.getElementById("myButton").click();
-  //   }
-  // });
-
-})(document);
+});
