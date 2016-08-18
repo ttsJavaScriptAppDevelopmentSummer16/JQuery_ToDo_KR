@@ -3,7 +3,7 @@ $( document ).ready(function() {
   function appendItem(i){
     var newLI = document.createElement('li');
     newLI.innerHTML = i;
-    var list = document.querySelector('ul');
+    var list = $('ul');
     list.appendChild(newLI);
     return newLI
   }
@@ -14,7 +14,7 @@ $( document ).ready(function() {
   }
 
   $('#myButton').on("click", function(e){
-    var newI = document.querySelector("#myField").value;
+    var newI = $("#myField").value;
     appendItem(newI);
   });
 
